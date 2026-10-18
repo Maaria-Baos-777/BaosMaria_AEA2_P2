@@ -35,10 +35,16 @@ El joc és una versió del clàssic *Asteroids*: la nau se situa al centre de la
 ---
 
 ## 📁 Estructura del Projecte
-Assets/
-└── _Project/
-├── Data/         # ScriptableObjects (Big, Medium, Small)
-├── Prefabs/      # Prefabs de la nau, bales i asteroides
-├── Scenes/       # Escena principal del joc
-├── Scripts/      # Scripts C# (Controllers, Pools, Managers)
-└── Textures/     # Sprites i assets gràfics
+📁 Assets/
+
+📂 _Project/
+
+📄 Data/ (ScriptableObjects: Big, Medium, Small)
+
+📦 Prefabs/ (Prefabs de la nau, bales i asteroides)
+
+🎬 Scenes/ (Escena principal del joc)
+
+📜 Scripts/ (Scripts C#: Controllers, Pools, Managers)
+
+🎨 Textures/ (Sprites i assets gràfics)
