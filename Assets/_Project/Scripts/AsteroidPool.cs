@@ -1,0 +1,77 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+// TODO: la mateixa estructura que el bullet pool.
+public class AsteroidPool : MonoBehaviour
+{
+    public static AsteroidPool Instance;
+
+    [SerializeField] private Asteroid asteroidPrefab;
+    [SerializeField] private int initialSize = 15;
+
+    private Stack<Asteroid> pool = new Stack<Asteroid>();
+
+    private void Awake()
+    {
+        // TODO:
+        //   Singleton.
+        //   Fer les comprovacions necessàries perquè només hi hagi una instància d'aquest singleton 
+        // TODO:Inicialitza aquí la Pool amb base que es farà servir. 
+        if(Instance == null) 
+        { 
+            Instance = this;
+        }
+        else 
+        {
+            Destroy(gameObject);
+        }
+
+        for(int i = 0; i < initialSize; i++) 
+        {
+            pool.Push(CreateAsteroid());
+        }
+    }
+
+    private Asteroid CreateAsteroid()
+    {
+        // TODO:
+        //   Instància els prefabs recorda que els has d'instanciar desactivats.
+        //   Fixeu-vos que el mètode ha de retornar un Asteroid
+
+        Asteroid asteroid = Instantiate(asteroidPrefab, transform);
+        asteroid.gameObject.SetActive(false);
+
+        return asteroid;
+    }
+
+    public Asteroid GetAsteroid(Vector3 position)
+    {
+        // TODO:
+        //   si l'stack no esta buit (pool.Count > 0), treu un Asteroid Pop().
+        //   si no en queda cap instancia un CreateAsteroid().
+        //   col·loca en la posició correcta, activa'l i retorna'l
+
+        Asteroid asteroid;
+        if(pool.Count > 0)
+        {
+            asteroid = pool.Pop();
+        }
+        else 
+        { 
+            asteroid = CreateAsteroid();
+        }
+        asteroid.transform.position = position;
+        asteroid.gameObject.SetActive(true);
+
+        return asteroid;
+    }
+
+    public void ReturnAsteroid(Asteroid asteroid)
+    {
+        // TODO:
+        //   Desactiva l'asteroid i torna'l al stack Push().
+        asteroid.gameObject.SetActive(false);
+        pool.Push(asteroid);
+    }
+}
