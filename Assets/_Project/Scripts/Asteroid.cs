@@ -83,10 +83,5 @@ public class Asteroid : MonoBehaviour
             GameManager.Instance.LoseLife(data.damage);
 			AsteroidPool.Instance.ReturnAsteroid(this);
 		}
-
-        if(other.CompareTag("Bullet")) 
-        {
-            TakeDamage(1);
-        }
     }
 }
