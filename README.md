@@ -1,6 +1,6 @@
 # 🚀 Asteroids 2D
 
-Projecte desenvolupat en **Unity 2D** per a l'assignatura de *Programació de Videojocs 2D i 3D* de l'**Institut Tecnològic de Barcelona (ITB)**.
+Projecte desenvolupat en **Unity 2D**.
 
 El joc és una versió del clàssic *Asteroids*: la nau se situa al centre de la pantalla rotant cap a la posició del cursor del ratolí i disparant projectils per defensar-se d'd'onades d'asteroides de diferents mides.
 
@@ -28,10 +28,17 @@ El joc és una versió del clàssic *Asteroids*: la nau se situa al centre de la
 
 ## 🛠️ Tecnologies Utilitzades
 
-* **Motor:** Unity 6 (2D Universal Render Pipeline)
+* **Motor:** Unity(2D Universal Render Pipeline)
 * **Llenguatge:** C# (.NET)
 * **Control de Versions:** Git / GitHub
 
 ---
 
 ## 📁 Estructura del Projecte
+Assets/
+└── _Project/
+├── Data/         # ScriptableObjects (Big, Medium, Small)
+├── Prefabs/      # Prefabs de la nau, bales i asteroides
+├── Scenes/       # Escena principal del joc
+├── Scripts/      # Scripts C# (Controllers, Pools, Managers)
+└── Textures/     # Sprites i assets gràfics
